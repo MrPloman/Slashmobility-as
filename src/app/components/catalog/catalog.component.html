@@ -9,16 +9,16 @@
     
 <cdk-virtual-scroll-viewport itemSize="100px" class="container">
   <div id="carusel" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
-      <mat-card *cdkVirtualFor="let result of dataUltima; let i = index" fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">  
-        <img mat-card-image id="artwork" src="{{result.artworkUrl100}}"/>
+      <mat-card *cdkVirtualFor="let track of dataUltima; let i = index" fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">  
+        <img mat-card-image id="artwork" src="{{track.artworkUrl100}}"/>
             <div>
-              <span><h2>{{result.trackName}}</h2></span>
+              <span><h2>{{track.trackName}}</h2></span>
             </div>
             <div>
-              <span><h3>{{result.collectionName}}</h3></span>
+              <span><h3>{{track.collectionName}}</h3></span>
             </div>
             <div>
-              <img id="heart" class="heart" src="../../../assets/img/heart-inline.png" [ngClass]="{'active': state, 'inactive': !state}" (click)="changeState()">
+              <img id="heart" class="heart" src="../../../assets/img/heart-inline.png" [ngClass]="{'heart-filled': isFavorite(track)}" (click)="handleFavorite(track)">
             </div>
       </mat-card>
   </div>

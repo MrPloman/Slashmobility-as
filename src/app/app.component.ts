@@ -13,7 +13,7 @@ export class AppComponent {
   title = 'eMusic';
 
   public dataFinalMusica: any[]=[];
-  
+
   constructor(private _dataShareService: DataShareService) {
     /*this._dataShareService.sendData$
     .subscribe(

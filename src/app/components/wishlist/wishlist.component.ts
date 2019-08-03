@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TrackService } from '../../services/track/track-service';
+
 @Component({
   selector: 'wishlist',
   templateUrl: './wishlist.component.html',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WishlistComponent implements OnInit {
 
-  constructor() { }
+  private favoriteTracks;
+
+  constructor(private trackService: TrackService) { }
 
   ngOnInit() {
+    this.favoriteTracks = this.trackService.getFavorites();
   }
 
 }

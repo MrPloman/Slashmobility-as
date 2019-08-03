@@ -1,4 +1,6 @@
-import { Component, Input, OnInit, ChangeDetectionStrategy, Renderer } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
+
+import { TrackService } from '../../services/track/track-service';
 
 @Component({
   selector: 'catalog',
@@ -11,20 +13,27 @@ export class CatalogComponent implements OnInit {
   public state: boolean;
   public text: any;
   
-  constructor(private renderer: Renderer) {
+  constructor(private trackService: TrackService) {
     this.state = false;
     this.text = "inactive"
-
   }
 
   ngOnInit(){
-    console.log('init');
-
   }
 
-  changeState(){
-    this.text = (this.state) ? "inactive" : "active";
-    this.state = !this.state;
+  handleFavorite(track) {
+    const isFavorite = this.isFavorite(track);
+
+    if (isFavorite) {
+      this.trackService.removeFromFavorites(track);
+    }
+
+    else {
+      this.trackService.addToFavorites(track);
+    }
   }
 
+  isFavorite(track) {
+    return this.trackService.isFavorite(track);
+  }
 }
