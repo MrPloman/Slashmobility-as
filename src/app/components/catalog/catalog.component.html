@@ -1,0 +1,26 @@
+<div id="welcome"> 
+    <h1>
+      Bienvenido a <span>eMusic</span>
+    </h1>
+    <h2>
+      <span>Busca </span>en nuestro catálogo y <span>selecciona</span> tus canciones favoritas.
+    </h2>
+</div>  
+    
+<cdk-virtual-scroll-viewport itemSize="100px" class="container">
+  <div id="carusel" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+      <mat-card *cdkVirtualFor="let result of dataUltima; let i = index" fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">  
+        <img mat-card-image id="artwork" src="{{result.artworkUrl100}}"/>
+            <div>
+              <span><h2>{{result.trackName}}</h2></span>
+            </div>
+            <div>
+              <span><h3>{{result.collectionName}}</h3></span>
+            </div>
+            <div>
+              <img id="heart" class="heart" src="../../../assets/img/heart-inline.png" [ngClass]="{'active': state, 'inactive': !state}" (click)="changeState()">
+            </div>
+      </mat-card>
+  </div>
+</cdk-virtual-scroll-viewport>
+

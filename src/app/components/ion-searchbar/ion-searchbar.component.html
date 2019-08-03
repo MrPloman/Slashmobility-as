@@ -1,0 +1,27 @@
+
+
+<form id="searchMusic" class="example-form">
+    <mat-form-field class="example-full-width">
+        <input matInput type="text" id="idGet" name="artistName" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <button (click)="search()">
+        <img id="magnify" src="../../../assets/img/magnify.png" width="20px">
+    </button>
+</form>
+
+
+<!--
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" *ngFor="let result of searchResults; let i = index">
+    <div class="sample" fxFlex="30%">
+        <mat-card class="example-card">
+         <img mat-card-image src="{{result.artworkUrl100}}"/>
+            <mat-card-content>
+                <h2>{{result.trackName}}</h2>
+                <h3>{{result.collectionName}}</h3>
+            </mat-card-content>
+            <mat-card-actions class="like">
+                <img class="heart" src="../../../assets/img/heart-inline.png">
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>-->
