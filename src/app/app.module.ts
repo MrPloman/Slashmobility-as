@@ -15,6 +15,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { HomeComponent } from './components/home/home.component';
 import { CatalogComponent } from './components/catalog/catalog.component';
 import { NgxPopper } from 'angular-popper';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NgxPopper } from 'angular-popper';
     WishlistComponent,
     HomeComponent,
     CatalogComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

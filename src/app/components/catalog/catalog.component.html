@@ -1,11 +1,3 @@
-<div id="welcome"> 
-    <h1>
-      Bienvenido a <span>eMusic</span>
-    </h1>
-    <h2>
-      <span>Busca </span>en nuestro catálogo y <span>selecciona</span> tus canciones favoritas.
-    </h2>
-</div>  
     
 <cdk-virtual-scroll-viewport itemSize="100px" class="container">
   <div id="carusel" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
@@ -21,9 +13,6 @@
               <img id="heart" class="heart" src="../../../assets/img/heart-inline.png" [ngClass]="{'heart-filled': isFavorite(track)}" (click)="handleFavorite(track)">
             </div>
       </mat-card>
-      <div *ngIf="dataUltima.length === 0">
-        No hemos encontrado resultados
-      </div>
   </div>
 </cdk-virtual-scroll-viewport>
 
