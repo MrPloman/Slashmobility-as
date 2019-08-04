@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core'; 
 import { HttpClient} from '@angular/common/http'; 
-import { Music } from '../../models/music';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map'; 
 
