@@ -11,7 +11,7 @@ export class RequestService {
   }
 
   getMusic(searchValue):Observable<any>{
-    return this._http.get(this.url +"search?term="+searchValue+"&entity=song");
+    return this._http.get(this.url +"search?term="+searchValue);
   }
 
 }

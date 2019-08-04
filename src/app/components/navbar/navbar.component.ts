@@ -11,7 +11,6 @@ export class NavBarComponent {
 
   receiveMusic($event){
     this.dataFinalMusica = $event;
-    console.log(this.dataFinalMusica);
     this.sendMusic();
   }
   
