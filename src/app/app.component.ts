@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Music } from './models/music';
 
 @Component({
   selector: 'app-root',

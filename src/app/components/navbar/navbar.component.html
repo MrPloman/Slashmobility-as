@@ -1,1 +1,13 @@
-
+<mat-grid-list cols="12" rowHeight="70px">
+    <mat-toolbar>
+        <mat-grid-tile colspan="1">
+            <img width="40px" alt="Itunes" src="../../../assets/img/itunes.png">
+        </mat-grid-tile>
+        <mat-grid-tile colspan="10">
+            <search (dataEvent)="receiveMusic($event)"></search>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+            <wishlist></wishlist>
+        </mat-grid-tile>
+    </mat-toolbar>
+</mat-grid-list>
