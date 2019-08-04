@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { RequestService } from './services/request/request.service';
-import { DataShareService } from './services/dataShare/data-share.service';
 import { LocalStorageService } from './services/localStorage/local-storage-service';
 import { TrackService } from './services/track/track-service';
 
@@ -34,7 +33,7 @@ import { NgxPopper } from 'angular-popper';
     NgxPopper, 
     FormsModule,
   ],
-  providers: [RequestService, DataShareService, LocalStorageService, TrackService],
+  providers: [RequestService, LocalStorageService, TrackService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
