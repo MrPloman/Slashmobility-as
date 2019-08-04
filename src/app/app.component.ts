@@ -15,12 +15,6 @@ export class AppComponent {
   public dataFinalMusica: any[]=[];
 
   constructor(private _dataShareService: DataShareService) {
-    /*this._dataShareService.sendData$
-    .subscribe(
-      data=>{
-        console.log(data);
-      } 
-    );*/
   }
 
   ngOnInit() {
@@ -28,12 +22,6 @@ export class AppComponent {
 
   receiveMusic($event){
     this.dataFinalMusica = $event;
-    console.log(this.dataFinalMusica);
   }
-
-
-
-
-
 }
 

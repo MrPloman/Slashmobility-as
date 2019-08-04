@@ -15,6 +15,9 @@ export class WishlistComponent implements OnInit {
 
   ngOnInit() {
     this.favoriteTracks = this.trackService.getFavorites();
+    this.trackService.favoriteTracksSubject.subscribe(favorites => {
+      this.favoriteTracks = favorites;
+    });
   }
 
 }

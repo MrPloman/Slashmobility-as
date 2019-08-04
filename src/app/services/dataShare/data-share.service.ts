@@ -14,16 +14,5 @@ export class DataShareService {
   sendData(data: any){
     this.dataFinal = data
     this._sendDataSubject.next(data);
-    console.log(data);
   }
-/*
-  getData(): Observable<any> {
-    return this._sendDataSubject.asObservable();
-}
-
-  sendData(data: Music[]){
-    this.data = data;
-    this._sendDataSubject.next(data);
-    console.log(data);
-  }*/
 }

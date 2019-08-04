@@ -9,11 +9,14 @@ import { LocalStorageService } from '../localStorage/local-storage-service';
 export class TrackService {
 
     public favoriteTracks = [];
+    public favoriteTracksSubject: Subject<any>;
 
     constructor(private localStorageService: LocalStorageService) {
         const localFavorites = this.localStorageService.getValue('favoriteTracks');
 
-        if (localFavorites) this.favoriteTracks = localFavorites; 
+        if (localFavorites) this.favoriteTracks = localFavorites;
+
+        this.favoriteTracksSubject = new Subject();
     }
 
     addToFavorites(track) {
@@ -21,14 +24,15 @@ export class TrackService {
 
         if (!isTrackFavorite) {
             this.favoriteTracks.push(track);
+            this.favoriteTracksSubject.next(this.favoriteTracks);
             this.localStorageService.setValue('favoriteTracks', this.favoriteTracks);
         }
     }
 
     removeFromFavorites(track) {
         this.favoriteTracks = this.favoriteTracks.filter(t => t.trackId !== track.trackId);
-        console.log(this.isFavorite(track));
         this.localStorageService.setValue('favoriteTracks', this.favoriteTracks);
+        this.favoriteTracksSubject.next(this.favoriteTracks);
     }
 
     getFavorites() {

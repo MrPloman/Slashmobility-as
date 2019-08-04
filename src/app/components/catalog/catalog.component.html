@@ -21,6 +21,9 @@
               <img id="heart" class="heart" src="../../../assets/img/heart-inline.png" [ngClass]="{'heart-filled': isFavorite(track)}" (click)="handleFavorite(track)">
             </div>
       </mat-card>
+      <div *ngIf="dataUltima.length === 0">
+        No hemos encontrado resultados
+      </div>
   </div>
 </cdk-virtual-scroll-viewport>
 

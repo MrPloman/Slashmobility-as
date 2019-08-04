@@ -27,7 +27,6 @@ export class IonSearchBarComponent implements OnInit {
 
   sendDato(){
     this._dataShareService.sendData(this.searchResults);
-    console.log(this.searchResults);
   }
 
   search(){
@@ -38,7 +37,10 @@ export class IonSearchBarComponent implements OnInit {
         this.sendMusic();
         
       },
-      error =>{ 
+      error =>{
+        this.searchResults = [];
+        this.sendDato();
+        this.sendMusic();
         console.log(<any>error);
       }
     );
